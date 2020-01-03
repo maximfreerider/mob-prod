@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPlaneActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Заповніть інформацію"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/photo_iv"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Назва"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:layout_marginTop="32dp"
+        android:id="@+id/name_et"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:imeOptions="actionNext"
+        android:layout_height="wrap_content"
+        android:hint="Авіа компанія"
+        android:inputType="text"
+
+        android:id="@+id/avia_company_et"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:imeOptions="actionNext"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="З"
+        android:id="@+id/from_et"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:hint="До"
+        android:id="@+id/to_et"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:imeOptions="actionNext"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Інформація про реєстрацію"
+        android:id="@+id/registration_et"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionNext"
+        android:hint="Швидкість"
+        android:inputType="numberDecimal"
+        android:id="@+id/speed_et"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:hint="Відстань"
+        android:inputType="numberDecimal"
+        android:id="@+id/distance_et"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Додати"
+        android:id="@+id/add_btn"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
