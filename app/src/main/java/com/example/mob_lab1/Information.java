@@ -16,11 +16,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 public class Information extends AppCompatActivity {
     private ImageView imageView_inf;
     public TextView come_from_inf, come_to_inf, avia_company_inf, speed_inf, flight_distance_inf;
@@ -53,9 +48,6 @@ public class Information extends AppCompatActivity {
         imageView_inf = findViewById(R.id.image_inf);
 
         if (tripId != null) {
-//            if (apiService==null){
-//                createService();
-//            }
             FirebaseFirestore.getInstance().collection("trips").document(tripId.trim()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -82,16 +74,4 @@ public class Information extends AppCompatActivity {
         flight_distance_inf.setText("flight_distance: " + trip.getFlight_distance());
         Picasso.get().load(trip.getImg()).into(imageView_inf);
     }
-
-//    private void createService() {
-//        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-//        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(interceptor).build();
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://backend-261116.appspot.com")
-//                .client(okHttpClient)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        apiService = retrofit.create(ApiService.class);
-//    }
 }
